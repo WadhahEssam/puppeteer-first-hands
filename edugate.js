@@ -28,7 +28,7 @@ const CREDS = require('./edugatecreds');
 
   // getting the current gpa
   let gpa = await page.evaluate((sel) => {
-    return document.querySelector('#myForm > div.data_in_2.right_dash > ul > li:nth-child(4)').textContent.split(':')[1];
+    return document.querySelector('#myForm > div.data_in_2.right_dash > ul > li:nth-child(4)').textContent.split(':')[1].trim();
   });
 
   console.log(gpa);
