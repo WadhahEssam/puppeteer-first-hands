@@ -9,5 +9,3 @@ const puppeteer = require('puppeteer');
   await page.screenshot({path: 'fadfadah.png'});
   await browser.close();
 })();
-
-
