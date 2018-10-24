@@ -9,13 +9,9 @@ const SIGNIN_BUTTON = '#login > form > div.auth-form-body.mt-3 > input.btn.btn-p
 const LIST_USERNAME_SELECTOR = '#user_search_results > div.user-list > div:nth-child(INDEX) > div.d-flex > div > a';
 const LENGTH_SELECTOR_CLASS = 'user-list-item';
 
-
 // infromation about the user that you want to search for
 const userToSearch = 'john';
 const searchUrl = `https://github.com/search?q=${userToSearch}&type=Users&utf8=%E2%9C%93`;
-
-
-
 
 (async () => {
   const browser = await puppeteer.launch({headless: false});
@@ -28,11 +24,9 @@ const searchUrl = `https://github.com/search?q=${userToSearch}&type=Users&utf8=%
   await page.keyboard.type(CREDS.username);
   await page.click(PASSWORD_SELECTOR);
   await page.keyboard.type(CREDS.password);
-
   await page.click(SIGNIN_BUTTON);
 
   await page.waitForNavigation();
-
   await page.goto(searchUrl);
   await page.waitFor(2*1000);
 
