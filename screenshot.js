@@ -6,6 +6,6 @@ const puppeteer = require('puppeteer');
   await page.setViewport({height: 1080, width: 1920});
   await page.goto('https://fadfadah.net');
   await page.waitFor(1000);
-  await page.screenshot({path: 'fadfadah.png'});
+  await page.screenshot({path: 'files/fadfadah.png'});
   await browser.close();
 })();
